@@ -15,54 +15,28 @@ function HideButton() {
   }
 }
 
-function myUpdateDog() {
-  var x = document.getElementById("myUpdateDog");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
-function myUpdateUser() {
-  var x = document.getElementById("myUpdateUser");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
+//counter
 
-//$("div.toshow").show();
+$(document).ready(function () {
+  $(".counter").each(function () {
+    $(this)
+      .prop("Counter", 0)
+      .animate(
+        {
+          Counter: $(this).text(),
+        },
+        {
+          duration: 4000,
+          easing: "swing",
+          step: function (now) {
+            $(this).text(Math.ceil(now));
+          },
+        }
+      );
+  });
+});
 
-function myProfileDog() {
-  var x = document.getElementById("myDog");
-  var y = document.getElementById("myUser");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-    y.style.display = "none";
-  }
-}
-
-function myProfileUser() {
-  var x = document.getElementById("myDog");
-  var y = document.getElementById("myUser");
-  if (y.style.display === "none") {
-    y.style.display = "block";
-    x.style.display = "none";
-  }
-}
-
-function newPerson() {
-  var newdiv = document.createElement("div");
-  newdiv.className += "item";
-
-  var newp = document.createElement("p");
-  newp.innerHTML = "TItle";
-
-  newdiv.appendChild(newp);
-  document.getElementById("main").appendChild(newdiv);
-}
-
+//used for creation of market place posts to view image.
 function preview() {
   frame.src = URL.createObjectURL(event.target.files[0]);
 }
