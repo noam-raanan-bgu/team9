@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Home|DoggyDates</title>
+    <link rel="icon" type="image/icon" href="images/favicon_paw_pink.ico" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Ubuntu:wght@300&display=swap"
+      rel="stylesheet" />
+
+    <script defer src="js/scripts.js"></script>
+
+    <!-- CSS Stylesheets -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/7dd817d580.js"
+      crossorigin="anonymous"></script>
+
+    <!-- Bootstrap  and Jquery  CDN Scripts -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+      integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+      crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+      integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+      crossorigin="anonymous"></script>
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <!-- Nav Bar -->
+    <nav class="navbar sticky-top navbar-expand-lg bg-light">
+      <a class="navbar-brand" href="index.html">
+        <h1 class="btn" id="DoggyDates">
+          <i class="fa-solid fa-paw fa-xl"></i> DoggyDates
+        </h1>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">
+              Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="About_us" type="button"
+              data-bs-toggle="modal" data-bs-target="#AboutUsModal">About
+              Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="MyMatches.html">My Matches</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="MarketPlace.html">MarketPlace</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="contact_us" type="button"
+              data-bs-toggle="modal"
+              data-bs-target="#ContectUsModal">Contact Us</a>
+          </li>
+        </ul>
+
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <button type="button" class="btn btn-dark btn-outline-light btn-m
+            signin-button-nav" data-bs-toggle="modal"
+            data-bs-target="#signinModal" id="signinbtn">
+            <i class="fa-solid fa-arrow-right-to-bracket"></i> Sign In
+          </button>
+          <a id="signupbtn" href="Create_User.html" class="btn btn-dark
+            btn-outline-light btn-m signin-button-nav"
+            tabindex="-1" role="button" aria-disabled="true">
+            <i class="fa-solid fa-user-plus"></i> Sign Up
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <section class="colored-section" id="title">
+      <div class="container-fluid">
+        <!-- Title -->
+
+        <div class="row">
+          <div class="col-lg-6">
+            <h1 class="big-heading">Meet new and interesting dogs nearby.</h1>
+            <button type="button" class="btn btn-dark btn-lg
+              signin-button-middle" data-bs-toggle="modal"
+              data-bs-target="#signinModal" id="signinbtn">
+              <i class="fa-solid fa-arrow-right-to-bracket"></i> Sign In
+            </button>
+            <a id="signupbtn" href="Create_User.html" class="btn
+              btn-outline-light btn-lg signin-button-middle"
+              tabindex="-1" role="button" aria-disabled="true">
+              <i class="fa-solid fa-user-plus"></i> Sign Up
+            </a>
+          </div>
+          <div class="col-lg-6">
+            <img class="title-image" src="images/main-image.png"
+              alt="dogs-image" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+
+    <section class="white-section" id="features">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="feature-box col-lg-4">
+            <i class="icon fas fa-check-circle fa-beat fa-4x"></i>
+            <h3 class="feature-title">Easy to use</h3>
+            <p>So easy to use, even your dog could do it.</p>
+          </div>
+
+          <div class="feature-box col-lg-4">
+            <i class="icon fas fa-bullseye fa-beat fa-4x"></i>
+            <h3 class="feature-title">Elite Clientele</h3>
+            <p>We have the best dogs around.</p>
+          </div>
+
+          <div class="feature-box col-lg-4">
+            <i class="icon fas fa-heart fa-beat fa-4x"></i>
+            <h3 class="feature-title">Guaranteed to work</h3>
+            <p>Find the love of your dog's life. </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+
+    <section class="colored-section" id="testimonials">
+      <div id="testimonial-carousel" class="carousel slide" data-ride="false">
+        <div class="carousel-inner">
+          <div class="carousel-item active container-fluid">
+            <h2 class="testimonial-text">
+              "I no longer have to sniff other dogs for love. I've found the
+              hottest Corgi on DoggyDates. Woof."
+            </h2>
+            <img class="testimonial-image" src="images/Chubby-image.jpeg"
+              alt="dog-profile" />
+            <em>Chubby, Beersheba</em>
+          </div>
+          <div class="carousel-item container-fluid">
+            <h2 class="testimonial-text">
+              "My dog used to be so lonely, but with DoggyDates's help, he's
+              found the love of his life. I think."
+            </h2>
+            <img class="testimonial-image" src="images/Noam-image.jpeg"
+              alt="lady-profile" />
+            <em>Noam, Beersheba</em>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button"
+          data-bs-target="#testimonial-carousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button"
+          data-bs-target="#testimonial-carousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Press -->
+
+    <section class="colored-section" id="press">
+      <img class="press-logo" src="images/yazamut360.webp" alt="yazamut360-logo"
+        />
+      <img class="press-logo" src="images/speedog.png" alt="speedog-logo" />
+      <img class="press-logo" src="images/cactus.webp" alt="cactuscapital-logo"
+        />
+      <img class="press-logo" src="images/bgu.png" alt="bgu-logo" />
+    </section>
+
+    <!--Counter Section START-->
+
+    <section class="wow fadeIn animated" style="visibility: visible;
+      animation-name: fadeIn">
+      <div class="container-fluid" id="counters">
+        <div class="row">
+          <!-- counter -->
+          <div
+            class="col-md-3 col-sm-6 bottom-margin text-center counter-section
+            wow fadeInUp sm-margin-bottom-ten animated"
+            data-wow-duration="300ms" style="visibility: visible;
+            animation-duration: 300ms;
+            animation-name: fadeInUp;">
+            <i class="fa fa-users medium-icon"></i>
+            <span id="anim-number-pizza" class="counter-number"></span>
+            <span class="timer counter alt-font appear" data-to="1645"
+              data-speed="7000">1645</span>
+            <p class="counter-title">Total Users</p>
+          </div>
+          <!-- end counter -->
+          <!-- counter -->
+          <div
+            class="col-md-3 col-sm-6 bottom-margin text-center counter-section
+            wow fadeInUp sm-margin-bottom-ten animated"
+            data-wow-duration="600ms" style="visibility: visible;
+            animation-duration: 600ms;
+            animation-name: fadeInUp;">
+            <i class="fa fa-dog medium-icon"></i>
+            <span class="timer counter alt-font appear" data-to="2376"
+              data-speed="7000">2376</span>
+            <span class="counter-title">Tail Waggers</span>
+          </div>
+          <!-- end counter -->
+          <!-- counter -->
+          <div
+            class="col-md-3 col-sm-6 bottom-margin-small text-center
+            counter-section wow fadeInUp xs-margin-bottom-ten animated"
+            data-wow-duration="900ms" style="visibility: visible;
+            animation-duration: 900ms;
+            animation-name: fadeInUp;">
+            <i class="fa fa-heart medium-icon"></i>
+            <span class="timer counter alt-font appear" data-to="3541"
+              data-speed="7000">3541</span>
+            <span class="counter-title">Succesful Matches</span>
+          </div>
+          <!-- end counter -->
+          <!-- counter -->
+          <div class="col-md-3 col-sm-6 text-center counter-section wow fadeInUp
+            animated" data-wow-duration="1200ms"
+            style="visibility: visible;
+            animation-duration: 1200ms;
+            animation-name: fadeInUp;">
+            <i class="fa fa-store medium-icon"></i>
+            <span class="timer counter alt-font appear" data-to="600"
+              data-speed="7000">600</span>
+            <span class="counter-title">MarketPlace Posts</span>
+          </div>
+          <!-- end counter -->
+        </div>
+      </div>
+    </section>
+    <!--Counter Section END-->
+
+    <!-- Call to Action -->
+
+    <section class="colored-section" id="cta">
+      <div class="container-fluid">
+        <h3 class="big-heading">
+          Find the True Love of Your Dog's Life Today.
+        </h3>
+        <button type="button" class="btn btn-dark btn-lg signin-button-middle"
+          data-bs-toggle="modal"
+          data-bs-target="#signinModal" id="signinbtn">
+          <i class="fa-solid fa-arrow-right-to-bracket"></i> Sign In
+        </button>
+        <a id="signupbtn" href="Create_User.html" class="btn btn-outline-light
+          btn-lg signin-button-middle" tabindex="-1"
+          role="button" aria-disabled="true">
+          <i class="fa-solid fa-user-plus"></i> Sign Up
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer_area section_padding_130_0">
+      <div class="container">
+        <div class="row">
+          <!-- Single Widget-->
+          <div class="col-12 col-sm-6 col-lg-4">
+            <div class="single-footer-widget section_padding_0_130">
+              <!-- Footer Logo-->
+              <div class="footer-logo mb-3"></div>
+              <p>
+                DoggyDates is a community platform that allows you to meet
+                fellow dogs and
+                dog owners. <br> Join our community on social media
+              </p>
+
+
+              <!-- Footer Social Area-->
+              <div class="footer_social_area">
+                <a href="https://www.facebook.com/Doggy-Dates-104840482246419"
+                  data-toggle="tooltip" data-placement="top"
+                  title="" data-original-title="Facebook"><i class="fab
+                    fa-facebook-f"></i></a><a
+                  href="https://www.instagram.com/doggydates2022/?igshid=YmMyMTA2M2Y="target="_blank"
+                  data-toggle="tooltip" data-placement="top" title=""
+                  data-original-title="instagram"><i
+                    class="fab fa-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+          <!-- Single Widget-->
+          <div class="col-12 col-sm-6 col-lg">
+            <div class="single-footer-widget section_padding_0_130">
+              <!-- Widget Title-->
+              <h5 class="widget-title">About</h5>
+              <!-- Footer Menu-->
+              <div class="footer_menu">
+                <ul>
+                  <li class="nav-item">
+                    <a id="About_us" type="button" data-bs-toggle="modal"
+                      data-bs-target="#AboutUsModal">About Us</a>
+                  </li>
+                  <li class="nav-item"><a id="T&Cs" type="button"
+                      data-bs-toggle="modal"
+                      data-bs-target="#TCsModal">T&Cs</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Single Widget-->
+          <div class="col-12 col-sm-6 col-lg">
+            <div class="single-footer-widget section_padding_0_130">
+              <!-- Widget Title-->
+              <h5 class="widget-title">Support & Contact</h5>
+              <!-- Footer Menu-->
+              <div class="footer_menu">
+                <ul>
+                  <li class="nav-item">
+                    <a id="contact_us" type="button" data-bs-toggle="modal"
+                      data-bs-target="#ContectUsModal">Contact
+                      Us</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Single Widget-->
+          <div class="col-12 col-sm-6 col-lg">
+            <div class="single-footer-widget section_padding_0_130">
+              <!-- Widget Title-->
+              <h5 class="widget-title">Our services</h5>
+              <!-- Footer Menu-->
+              <div class="footer_menu">
+                <ul>
+                  <li class="nav-item">
+                    <a href="MyMatches.html">My Matches</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="MarketPlace.html">MarketPlace</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Modals -->
+
+    <!-- SignIn Modal Start -->
+    <div class="modal fade" id="signinModal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="ModalSignIn">Sign In</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"
+              aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p class="mb-lg-0">Enter your user email & password to enter your
+              account</p>
+            <form action="" class="row g-3 needs-validation" novalidate>
+              <div class="modal-body text-center">
+                <div class="form-floating mb-3">
+                  <input type="email" class="form-control" id="floatingInput"
+                    placeholder="userName@example.com"
+                    required />
+                  <label for="floatingInput">Email address</label>
+                  <div class="invalid-feedback">
+                    Please Enter A Valid Email Address, Format : mdo@example.com
+                  </div>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="password" class="form-control"
+                    id="floatingInputGrid" placeholder="password" minlength="8"
+                    maxlength="15" required />
+                  <label for="floatingInputGrid">Password</label>
+                  <div class="invalid-feedback">
+                    Please provide a valid password between 8-15 numbers/letters
+                  </div>
+                </div>
+                <br />
+                <button type="submit" class="btn btn-dark" id="submit">
+                  <a href="index.html"></a>
+                  Sign In
+                </button>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer text-center mx-auto">
+            <p class="text-end">
+              Don't have an account ?
+              <a href="Create_User.html" class="text-primery">Click HERE</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- SignIn Modal End -->
+    <!-- ContectUs Modal Start -->
+    <div class="modal fade" id="ContectUsModal" aria-hidden="true"
+      aria-labelledby="ModalContectUs" tabindex="-1">
+      <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Contact Us</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"
+              aria-label="Close"></button>
+          </div>
+          <form action="">
+            <div class="modal-body text-center">
+              <div class="form-floating mb-3">
+                <input type="text" id="newUserName" class="form-control
+                  form-control-lg" pattern="[a-z]{2,}" required />
+                <label class="form-label" for="newUserName"><i class="fa
+                    fa-heading mx-3"></i>Name*</label>
+                <div class="invalid-feedback">Please provide a valid name
+                  includes letters.</div>
+              </div>
+
+              <div class="form-floating mb-3">
+                <input type="email" id="newEventEmail" class="form-control
+                  form-control-lg" required />
+                <label class="form-label" for="newEmail"><i class="fa fa-at
+                    mx-3"></i>Email To Contact*</label>
+                <div class="invalid-feedback">
+                  Please provide a valid email.
+                </div>
+              </div>
+
+              <div class="form-floating mb-3">
+                <textarea type="text" id="newEventEmail" class="form-control
+                  form-control-lg" rows="5" minlength="10"
+                  maxlength="100"></textarea>
+                <label class="form-label" for="newEventEmail"><i class="fa
+                    fa-info mx-3"></i>Your Message*</label>
+                <div class="invalid-feedback">
+                  Please write 10-100 characters.
+                </div>
+              </div>
+
+              <label for="newProfilePhoto" class="form-label"><i class="fa-solid
+                  fa-plus"></i>Upload Profile
+                Picture</label>
+              <input class="form-control mb-3" type="file" id="newProfilePhoto"
+                accept=".jpeg,.jpg,.png" required />
+              <div class="invalid-feedback">Please provide one valid main photo.
+                (jpeg or png)</div>
+
+              <hr />
+              <button type="submit" class="btn btn-dark" id="submit">
+                send
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- ContectUs Modal End -->
+    <!-- AboutUs Modal Start -->
+    <div class="modal fade" id="AboutUsModal" aria-hidden="true"
+      aria-labelledby="ModalAboutctUs" tabindex="-1">
+      <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered
+        modal-m">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">About Us</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"
+              aria-label="Close"></button>
+          </div>
+
+          <div class="modal-body" style="text-align: left;">
+            <p>
+              Welcome to DoggyDates!
+              <br>
+              Doggy dates was founded in 2022 and is designed to be an online
+              social network for dog owners to share a social life all around
+              the
+              country.<br />
+
+              The company's activities focus on understanding the dog owners
+              natural need to create shared social frameworks and develop an
+              <br />
+
+              active community life for their dogs based on matching data
+              between
+              them.<br />
+
+              We bring our community members a fresh, fun and enjoyable spirit.<br
+                />
+
+              On Doggy dates we ensure you won't have a single boring moment
+              ....<br />
+
+              We are committed to discretion, and assure our surfers that we
+              will
+              not pass on their personal <br />
+
+              details to other members of the site, and that their personal
+              details will be passed on by them only.<br />
+
+              The site system provides answers to questions and strives to
+              address
+              any issue as quickly as possible.<br />
+
+              We continue to grow and evolve - and think 24/7 about ways to make
+              Doggy dates a more successful, satisfying, exciting and fun site
+              for
+              you.<br />
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- AboutUs Modal End -->
+    <!-- T&Cs Modal Start -->
+    <div class="modal fade" id="TCsModal" aria-hidden="true"
+      aria-labelledby="ModalT&Cs" tabindex="-1">
+      <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered
+        modal-m">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Terms and Conditions</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"
+              aria-label="Close"></button>
+          </div>
+          <div class="modal-body" style="text-align: left;">
+            <p>
+              Here you can create frendships that have a simple base - dog
+              loving. <br>
+              In order to be a part of our loving community we wish you please
+              read the following T&Cs very carefully.
+              By using our servise and be a part of our community we signify
+              your acceptance of our T&Cs. <br>
+            </p>
+            <br><br>
+            <p>1. All services provided on our website (matches, market...) are
+              provided to registered users only. <br>
+              in order tou use our services you have to use our sign up. <br>
+              2.While Sign up each user can create only one person user for each
+              email they have. <br>
+              you can create as many dogs pages as you like. <br>
+              3.When logging in to the user, you must enter the user information
+              with which you registered. <br>
+              4.The users of the site are dog owners only. <br>
+              5.In case of unauthorized use of your account you must notify us.
+              <br>
+              Any person who holds the details of your account to the site by
+              consent is not an unauthorized person. <br>
+              6.You must report any misuse of the Site by its users. <br>
+              7.Submitting incorrect or inaccurate information during the
+              registration process is not our responsibility
+              but the sole responsibility of the users.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- T&Cs Modal End -->
+  </body>
+</html>

@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MarketPlace|DoggyDates</title>
+    <link rel="icon" type="image/icon" href="images/favicon_paw_pink.ico" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Ubuntu:wght@300&display=swap"
+      rel="stylesheet" />
+
+
+    <!-- CSS Stylesheets -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/market-styles.css" />
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/7dd817d580.js"
+      crossorigin="anonymous"></script>
+
+  </head>
+
+  <body>
+    <!-- Nav Bar -->
+    <nav class="navbar sticky-top navbar-expand-lg bg-light">
+      <a class="navbar-brand" href="index.html">
+        <h1 class="btn" id="DoggyDates">
+          <i class="fa-solid fa-paw fa-xl"></i> DoggyDates
+        </h1>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="index.html">
+              Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="About_us" type="button"
+              data-bs-toggle="modal" data-bs-target="#AboutUsModal">About
+              Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="MyMatches.html">My Matches</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="MarketPlace.html">MarketPlace</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="contact_us" type="button"
+              data-bs-toggle="modal"
+              data-bs-target="#ContectUsModal">Contact Us</a>
+          </li>
+        </ul>
+
+        <div class="d-grid-md-flex justify-content-md-end">
+          <a id="user" href="Profile.html" class="btn btn-light btn-m
+            signin-button-nav" tabindex="-1" role="button"
+            aria-disabled="true" style="font-weight: bold;">
+            user name <i class="fa-solid fa-user"></i>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!--Main Content Area START-->
+    <main id="main">
+      <section class="container my-2 p-3">
+        <nav class="navbar navbar-light bg-light justify-content"
+          id="marketplace">
+          <ul class="nav nav-tabs me-auto" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <a class="nav-link active" id="nav-home-tab" data-bs-toggle="tab"
+                data-bs-target="#nav-home" type="button"
+                role="tab" aria-controls="nav-home" aria-selected="true">Toys</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="nav-link" id="nav-profile-tab" data-bs-toggle="tab"
+                data-bs-target="#nav-profile" type="button"
+                role="tab" aria-controls="nav-profile" aria-selected="false">Accessories</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="nav-link" id="nav-contact-tab" data-bs-toggle="tab"
+                data-bs-target="#nav-contact" type="button"
+                role="tab" aria-controls="nav-contact" aria-selected="false">Training
+                Equipment</a>
+            </li>
+          </ul>
+
+
+          <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button type="button" class="btn btn-dark btn-m signin-button-nav"
+              data-bs-toggle="modal"
+              data-bs-target="#new-post-modal">
+              <i class="fa-solid fa-plus"></i> New Post
+            </button>
+            <button type="button" class="btn btn-dark btn-m signin-button-nav"
+              data-bs-toggle="modal"
+              data-bs-target="#myposts" id="my posts">
+              My Posts
+            </button>
+          </div>
+        </nav>
+      </section>
+
+      <div class="products">
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
+            aria-labelledby="nav-home-tab">
+            <section class="container" id="market">
+              <div class="content">
+                <div class="container">
+                  <div class="row g-3">
+                    <div class="col-md-4">
+                      <div class="card" id="cardMarket">
+                        <img src="images/foodball_8.jpeg" class="card-img-top"
+                          />
+                        <div class="card-body">
+                          <div class="d-flex justify-content-between">
+                            <span class="font-weight-bold">Rubber Food Ball</span>
+                            <span class="font-weight-bold">8 ₪</span>
+                          </div>
+                          <p class="card-text mb-1 mt-1">
+                            Rubber ball with a place for food, fun for chewing.
+                            New.
+                            Made of durable rubber safe on the teeth and gums as
+                            they chew.
+                          </p>
+                          <div class="d-flex align-items-center flex-row"
+                            id="time-posted">
+                            <i class="fa-solid fa-calendar"></i> &nbsp2 hours
+                            ago
+                          </div>
+                        </div>
+                        <hr />
+                        <button type="button" class="btn btn-dark btn-m
+                          signin-button-middle" data-bs-toggle="modal"
+                          data-bs-target="#moreinformation4" id="more
+                          information4">
+                          <i class="fa-solid fa-circle-info"></i> contact
+                          information
+                        </button>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="card" id="cardMarket">
+                        <img src="images/smartpetsnugglepuppy_40.png"
+                          class="card-img-top" />
+                        <div class="card-body">
+                          <div class="d-flex justify-content-between">
+                            <span class="font-weight-bold">SmartPetLove Snuggle
+                              Puppy</span>
+                            <span class="font-weight-bold">40 ₪</span>
+                          </div>
+                          <p class="card-text mb-1 mt-1">
+                            Puppy doll, with beating heart sound and vibration,
+                            optional heating. Helps with new home
+                            adjustment
+                            for puppies. Used.
+                          </p>
+                          <div class="d-flex align-items-center flex-row"
+                            id="time-posted">
+                            <i class="fa-solid fa-calendar"></i> &nbsp5 hours
+                            ago
+                          </div>
+                        </div>
+                        <hr />
+                        <button type="button" class="btn btn-dark btn-m
+                          signin-button-middle" data-bs-toggle="modal"
+                          data-bs-target="#moreinformation4" id="more
+                          information4">
+                          <i class="fa-solid fa-circle-info"></i> contact
+                          information
+                        </button>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="card" id="cardMarket">
+                        <img src="images/cornchewtoy_free.jpeg"
+                          class="card-img-top" />
+                        <div class="card-body">
+                          <div class="d-flex justify-content-between">
+                            <span class="font-weight-bold">Corn Chew Toy</span>
+                            <img src="images/free_32px.png" class="free-icon" />
+                          </div>
+                          <p class="card-text mb-1 mt-1">
+                            Used chew toy. <BR>
+                            safe on the teeth and gums as they chew.
+                            <BR> Used.
+                          </p>
+                          <div class="d-flex align-items-center flex-row"
+                            id="time-posted">
+                            <i class="fa-solid fa-calendar"></i> &nbsp3 weeks
+                            ago
+                          </div>
+                        </div>
+                        <hr />
+                        <button type="button" class="btn btn-dark btn-m
+                          signin-button-middle" data-bs-toggle="modal"
+                          data-bs-target="#moreinformation3" id="more
+                          information3">
+                          <i class="fa-solid fa-circle-info"></i> contact
+                          information
+                        </button>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="card" id="cardMarket">
+                        <img src="images/kongwubbafriends_40.png"
+                          class="card-img-top" />
+                        <div class="card-body">
+                          <div class="d-flex justify-content-between">
+                            <span class="font-weight-bold">Kong Wubba Frinds
+                              Squeeky Toy</span>
+                            <span class="font-weight-bold">40 ₪</span>
+                          </div>
+                          <p class="card-text mb-1 mt-1">
+                            Original Kong squeeky toy for play. New condition.
+                          </p>
+                          <div class="d-flex align-items-center flex-row"
+                            id="time-posted">
+                            <i class="fa-solid fa-calendar"></i> &nbsp15 hours
+                            ago
+                          </div>
+                        </div>
+                        <hr />
+                        <button type="button" class="btn btn-dark btn-m
+                          signin-button-middle" data-bs-toggle="modal"
+                          data-bs-target="#moreinformation1" id="more
+                          information1">
+                          <i class="fa-solid fa-circle-info"></i> contact
+                          information
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <div class="tab-pane fade" id="nav-profile" role="tabpanel"
+            aria-labelledby="nav-profile-tab">
+            <section class="container" id="market">
+              <div class="content">
+                <div class="container">
+                  <div class="row g-3">
+                    <div class="col-md-4">
+                      <div class="card" id="cardMarket">
+                        <img src="images/petexbes_100.jpeg" class="card-img-top"
+                          />
+                        <div class="card-body">
+                          <div class="d-flex justify-content-between">
+                            <span class="font-weight-bold">PetX Dog Bed</span>
+                            <span class="font-weight-bold">150 ₪</span>
+                          </div>
+                          <p class="card-text mb-1 mt-1">
+                            Great Condition <br>
+                            red and black place for your dog <br>
+                            very comfortable
+                          </p>
+                          <div class="d-flex align-items-center flex-row"
+                            id="time-posted">
+                            <i class="fa-solid fa-calendar"></i> &nbsp2 months
+                            ago
+                          </div>
+                        </div>
+                        <hr />
+                        <button type="button" class="btn btn-dark btn-m
+                          signin-button-middle" data-bs-toggle="modal"
+                          data-bs-target="#moreinformation2" id="more
+                          information2">
+                          <i class="fa-solid fa-circle-info"></i> contact
+                          information
+                        </button>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="card" id="cardMarket">
+                        <img src="images/Frontlineampules_free.jpeg"
+                          class="card-img-top" />
+                        <div class="card-body">
+                          <div class="d-flex justify-content-between">
+                            <span class="font-weight-bold">Frontline Lg Dog
+                              Flea/Tick Ampules</span>
+                            <img src="images/free_32px.png" class="free-icon" />
+                          </div>
+                          <p class="card-text mb-1 mt-1">
+                            4 Ampules for large dogs. <br>
+                            my dog did not like <br>
+                            high quality
+                          </p>
+                          <div class="d-flex align-items-center flex-row"
+                            id="time-posted">
+                            <i class="fa-solid fa-calendar"></i> &nbsp8 hours
+                            ago
+                          </div>
+                        </div>
+                        <hr />
+                        <button type="button" class="btn btn-dark btn-m
+                          signin-button-middle" data-bs-toggle="modal"
+                          data-bs-target="#moreinformation4" id="more
+                          information4">
+                          <i class="fa-solid fa-circle-info"></i> contact
+                          information
+                        </button>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+          <div class="tab-pane fade" id="nav-contact" role="tabpanel"
+            aria-labelledby="nav-contact-tab">
+            <section class="container" id="market">
+              <div class="content">
+                <div class="container">
+                  <div class="row g-3">
+                    <div class="col-md-4">
+                      <div class="card" id="cardMarket">
+                        <img src="images/pet_carrier_75.png"
+                          class="card-img-top" />
+                        <div class="card-body">
+                          <div class="d-flex justify-content-between">
+                            <span class="font-weight-bold">Pet Carrier</span>
+                            <img src="images/free_32px.png" class="free-icon" />
+                          </div>
+                          <p class="card-text mb-1 mt-1">
+                            Used only 3-4 times for a foster puppy :) no longer
+                            need it
+                          </p>
+                          <div class="d-flex align-items-center flex-row"
+                            id="time-posted">
+                            <i class="fa-solid fa-calendar"></i> &nbsp4 seconds
+                            ago
+                          </div>
+                        </div>
+                        <hr />
+                        <button type="button" class="btn btn-dark btn-m
+                          signin-button-middle" data-bs-toggle="modal"
+                          data-bs-target="#moreinformation3" id="more
+                          information3">
+                          <i class="fa-solid fa-circle-info"></i> contact
+                          information
+                        </button>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="card" id="cardMarket">
+                        <img src="images/puppypen_190.jpeg" class="card-img-top"
+                          />
+                        <div class="card-body">
+                          <div class="d-flex justify-content-between">
+                            <span class="font-weight-bold">Puppy Pen</span>
+                            <span class="font-weight-bold">190 ₪</span>
+                          </div>
+                          <p class="card-text mb-1 mt-1">
+                            Puppy pen in great condition. <br>
+                            very easy to put together
+                          </p>
+                          <div class="d-flex align-items-center flex-row"
+                            id="time-posted">
+                            <i class="fa-solid fa-calendar"></i> &nbsp5 days ago
+                          </div>
+                        </div>
+                        <hr />
+                        <button type="button" class="btn btn-dark btn-m
+                          signin-button-middle" data-bs-toggle="modal"
+                          data-bs-target="#moreinformation1" id="more
+                          information1">
+                          <i class="fa-solid fa-circle-info"></i> contact
+                          information
+                        </button>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="card" id="cardMarket">
+                        <img src="images/cage_175.png" class="card-img-top" />
+                        <div class="card-body">
+                          <div class="d-flex justify-content-between">
+                            <span class="font-weight-bold">Training Cage</span>
+                            <span class="font-weight-bold">190 ₪</span>
+                          </div>
+                          <p class="card-text mb-1 mt-1">
+                            Medium sized dog cage for training. sizes: 76X54X50
+                            cm.
+                          </p>
+                          <div class="d-flex align-items-center flex-row"
+                            id="time-posted">
+                            <i class="fa-solid fa-calendar"></i> &nbsp40 minutes
+                            ago
+                          </div>
+                        </div>
+                        <hr />
+                        <button type="button" class="btn btn-dark btn-m
+                          signin-button-middle" data-bs-toggle="modal"
+                          data-bs-target="#moreinformation2" id="more
+                          information2">
+                          <i class="fa-solid fa-circle-info"></i> contact
+                          information
+                        </button>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </main>
+      <br>
+      <!--Main Content Area END-->
+      <!-- Footer -->
+      <footer class="footer_area section_padding_130_0">
+        <div class="container">
+          <div class="row">
+            <!-- Single Widget-->
+            <div class="col-12 col-sm-6 col-lg-4">
+              <div class="single-footer-widget section_padding_0_130">
+                <!-- Footer Logo-->
+                <div class="footer-logo mb-3"></div>
+                <p>
+                  DoggyDates is a community platform that allows you to meet
+                  fellow dogs and
+                  dog owners. <br> Join our community on social media
+                </p>
+
+
+                <!-- Footer Social Area-->
+                <div class="footer_social_area">
+                  <a href="https://www.facebook.com/Doggy-Dates-104840482246419"
+                    data-toggle="tooltip" data-placement="top"
+                    title="" data-original-title="Facebook"><i class="fab
+                      fa-facebook-f"></i></a><a
+                    href="https://www.instagram.com/doggydates2022/?igshid=YmMyMTA2M2Y="target="_blank"
+                    data-toggle="tooltip" data-placement="top" title=""
+                    data-original-title="instagram"><i
+                      class="fab fa-instagram"></i></a>
+                </div>
+              </div>
+            </div>
+            <!-- Single Widget-->
+            <div class="col-12 col-sm-6 col-lg">
+              <div class="single-footer-widget section_padding_0_130">
+                <!-- Widget Title-->
+                <h5 class="widget-title">About</h5>
+                <!-- Footer Menu-->
+                <div class="footer_menu">
+                  <ul>
+                    <li class="nav-item">
+                      <a id="About_us" type="button" data-bs-toggle="modal"
+                        data-bs-target="#AboutUsModal">About
+                        Us</a>
+                    </li>
+                    <li class="nav-item"><a id="T&Cs" type="button"
+                        data-bs-toggle="modal"
+                        data-bs-target="#TCsModal">T&Cs</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Single Widget-->
+            <div class="col-12 col-sm-6 col-lg">
+              <div class="single-footer-widget section_padding_0_130">
+                <!-- Widget Title-->
+                <h5 class="widget-title">Support & Contact</h5>
+                <!-- Footer Menu-->
+                <div class="footer_menu">
+                  <ul>
+                    <li class="nav-item">
+                      <a id="contact_us" type="button" data-bs-toggle="modal"
+                        data-bs-target="#ContectUsModal">Contact
+                        Us</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Single Widget-->
+            <div class="col-12 col-sm-6 col-lg">
+              <div class="single-footer-widget section_padding_0_130">
+                <!-- Widget Title-->
+                <h5 class="widget-title">Our services</h5>
+                <!-- Footer Menu-->
+                <div class="footer_menu">
+                  <ul>
+                    <li class="nav-item">
+                      <a href="MyMatches.html">My Matches</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="MarketPlace.html">MarketPlace</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <!-- Modals -->
+
+      <!-- SignIn Modal Start -->
+      <div class="modal fade" id="signinModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="ModalSignIn">Sign In</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"
+                aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p class="mb-lg-0">Enter your user email & password to enter your
+                account</p>
+              <form action="" class="row g-3 needs-validation" novalidate>
+                <div class="modal-body text-center">
+                  <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="floatingInput"
+                      placeholder="userName@example.com"
+                      required />
+                    <label for="floatingInput">Email address</label>
+                    <div class="invalid-feedback">
+                      Please Enter A Valid Email Address, Format :
+                      mdo@example.com
+                    </div>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="password" class="form-control"
+                      id="floatingInputGrid" placeholder="password"
+                      minlength="8"
+                      maxlength="15" required />
+                    <label for="floatingInputGrid">Password</label>
+                    <div class="invalid-feedback">
+                      Please provide a valid password between 8-15
+                      numbers/letters
+                    </div>
+                  </div>
+                  <br />
+                  <button type="submit" class="btn btn-dark" id="submit">
+                    <a href="index.html"></a>
+                    Sign In
+                  </button>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer text-center mx-auto">
+              <p class="text-end">
+                Don't have an account ?
+                <a href="Create_User.html" class="text-primery">Click HERE</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- SignIn Modal End -->
+      <!-- ContectUs Modal Start -->
+      <div class="modal fade" id="ContectUsModal" aria-hidden="true"
+        aria-labelledby="ModalContectUs" tabindex="-1">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Contact Us</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"
+                aria-label="Close"></button>
+            </div>
+            <form action="">
+              <div class="modal-body text-center">
+                <div class="form-floating mb-3">
+                  <input type="text" id="newUserName" class="form-control
+                    form-control-lg" pattern="[a-z]{2,}" required />
+                  <label class="form-label" for="newUserName"><i class="fa
+                      fa-heading mx-3"></i>Name*</label>
+                  <div class="invalid-feedback">Please provide a valid name
+                    includes letters.</div>
+                </div>
+
+                <div class="form-floating mb-3">
+                  <input type="email" id="newEventEmail" class="form-control
+                    form-control-lg" required />
+                  <label class="form-label" for="newEmail"><i class="fa fa-at
+                      mx-3"></i>Email To Contact*</label>
+                  <div class="invalid-feedback">
+                    Please provide a valid email.
+                  </div>
+                </div>
+
+                <div class="form-floating mb-3">
+                  <textarea type="text" id="newEventEmail" class="form-control
+                    form-control-lg" rows="5" minlength="10"
+                    maxlength="100"></textarea>
+                  <label class="form-label" for="newEventEmail"><i class="fa
+                      fa-info mx-3"></i>Your Message*</label>
+                  <div class="invalid-feedback">
+                    Please write 10-100 characters.
+                  </div>
+                </div>
+
+                <label for="newProfilePhoto" class="form-label"><i
+                    class="fa-solid fa-plus"></i>Upload Profile
+                  Picture</label>
+                <input class="form-control mb-3" type="file"
+                  id="newProfilePhoto" accept=".jpeg,.jpg,.png" required />
+                <div class="invalid-feedback">Please provide one valid main
+                  photo. (jpeg or png)</div>
+
+                <hr />
+                <button type="submit" class="btn btn-dark" id="submit">
+                  send
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- ContectUs Modal End -->
+      <!-- AboutUs Modal Start -->
+      <div class="modal fade" id="AboutUsModal" aria-hidden="true"
+        aria-labelledby="ModalAboutctUs" tabindex="-1">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered
+          modal-m">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">About Us</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"
+                aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body" style="text-align: left;">
+              <p>
+                Welcome to DoggyDates!
+                <br>
+                Doggy dates was founded in 2022 and is designed to be an online
+                social network for dog owners to share a social life all around
+                the
+                country.<br />
+
+                The company's activities focus on understanding the dog owners
+                natural need to create shared social frameworks and develop an
+                <br />
+
+                active community life for their dogs based on matching data
+                between
+                them.<br />
+
+                We bring our community members a fresh, fun and enjoyable
+                spirit.<br />
+
+                On Doggy dates we ensure you won't have a single boring moment
+                ....<br />
+
+                We are committed to discretion, and assure our surfers that we
+                will
+                not pass on their personal <br />
+
+                details to other members of the site, and that their personal
+                details will be passed on by them only.<br />
+
+                The site system provides answers to questions and strives to
+                address
+                any issue as quickly as possible.<br />
+
+                We continue to grow and evolve - and think 24/7 about ways to
+                make
+                Doggy dates a more successful, satisfying, exciting and fun site
+                for
+                you.<br />
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- AboutUs Modal End -->
+      <!-- T&Cs Modal Start -->
+      <div class="modal fade" id="TCsModal" aria-hidden="true"
+        aria-labelledby="ModalT&Cs" tabindex="-1">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered
+          modal-m">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Terms and Conditions</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"
+                aria-label="Close"></button>
+            </div>
+            <div class="modal-body" style="text-align: left;">
+              <p>
+                Here you can create frendships that have a simple base - dog
+                loving. <br>
+                In order to be a part of our loving community we wish you please
+                read the following T&Cs very
+                carefully.
+                By using our servise and be a part of our community we signify
+                your acceptance of our T&Cs. <br>
+              </p>
+              <br><br>
+              <p>1. All services provided on our website (matches, market...)
+                are provided to registered users only.
+                <br>
+                in order tou use our services you have to use our sign up. <br>
+                2.While Sign up each user can create only one person user for
+                each email they have. <br>
+                you can create as many dogs pages as you like. <br>
+                3.When logging in to the user, you must enter the user
+                information with which you registered. <br>
+                4.The users of the site are dog owners only. <br>
+                5.In case of unauthorized use of your account you must notify
+                us. <br>
+                Any person who holds the details of your account to the site by
+                consent is not an unauthorized
+                person. <br>
+                6.You must report any misuse of the Site by its users. <br>
+                7.Submitting incorrect or inaccurate information during the
+                registration process is not our
+                responsibility
+                but the sole responsibility of the users.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <!-- T&Cs Modal End -->
+
+      <!--New Post Modal START-->
+      <div class="modal fade" id="new-post-modal" data-bs-backdrop="static"
+        data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel">
+                Create New Post
+              </h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"
+                aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body" id="create-post" style="text-align: left;">
+              <form class="row g-3 needs-validation" id="create-post"
+                novalidate>
+
+                <div class="col md-3">
+                  <label for="Image" class="form-label">Choose image:</label>
+                  <input class="form-control" type="file" id="formFile"
+                    onchange="preview()" />
+                  <button onclick="clearImage()" class="btn btn-outline-dark
+                    mt-3">
+                    Clear
+                  </button>
+                </div>
+
+                <div class="col md-9">
+                  <img id="frame" src="" class="img-fluid" />
+                </div>
+
+                <div class="col-12">
+                  <label for="title" class="form-label">Title</label>
+                  <input type="text" class="form-control" id="post-title"
+                    maxlength="100" minlength="10" placeholder=""
+                    value="" required>
+                  <div class="invalid-feedback">
+                    Please write 10-100 characters.
+                  </div>
+                </div>
+
+                <div class="col-7">
+                  <label for="title" class="form-label">Category</label>
+                  <select class="form-select" id="choose-category" required>
+                    <option selected disabled value="">Choose a category</option>
+                    <option value="1">Toys</option>
+                    <option value="2">Accessories</option>
+                    <option value="3">Training Equipment</option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Valid category is required.
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <label for="paid" class="form-label">Is free?</label>
+                  <div class="form-check">
+                    <input id="chkYes" name="isfree" type="radio"
+                      class="form-check-input" onclick="EnableDisableTextBox()"
+                      required>
+                    <label class="form-check-label" for="chkYes">Yes</label>
+                  </div>
+                  <div class="form-check">
+                    <input id="chkNo" name="isfree" type="radio"
+                      class="form-check-input" onclick="EnableDisableTextBox()"
+                      required>
+                    <label class="form-check-label" for="chkNo">No</label>
+                  </div>
+                  <div class="invalid-feedback">
+                    is required.
+                  </div>
+                </div>
+
+                <div class="col-md-5">
+                  <label for="price" class="form-label">Price</label>
+                  <input type="text" class="form-control" id="txtPrice" value=""
+                    disabled="disabled" required>
+                </div>
+                <div class="invalid-feedback">
+                  Valid price is required.
+                </div>
+
+
+
+                <div class="col-12">
+                  <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+                  <textarea class="form-control"
+                    id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary reset-btn"
+                  data-bs-dismiss="modal" onclick="resetForm()">
+                  Close
+                </button>
+                <button class="btn btn-dark" id="submit" type="submit">Create</button>
+              </div>
+
+            </form>
+
+
+          </div>
+        </div>
+      </div>
+
+      <!--New Post Modal END-->
+      <!-- My Posts Modal Start -->
+      <div class="modal fade modal-m" id="myposts" aria-hidden="true"
+        aria-labelledby="ModalAboutctUs" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="ModalSignIn">My Posts</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"
+                aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+              <div class="card" id="cardMarket">
+                <img src="images/cornchewtoy_free.jpeg" class="card-img-top" />
+                <div class="card-body">
+                  <div class="d-flex justify-content-between">
+                    <span class="font-weight-bold">Corn Chew Toy</span>
+                    <img src="images/free_32px.png" class="free-icon" />
+                  </div>
+                  <p class="card-text mb-1 mt-1">
+                    Used chew toy.
+                    safe on the teeth and gums as they chew.
+                    <BR> Used.
+                  </p>
+                  <div class="d-flex align-items-center flex-row"
+                    id="time-posted">
+                    <i class="fa-solid fa-calendar"></i> &nbsp3 weeks ago
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- My Posts info Modal End -->
+
+      <!-- More info Modal Start -->
+      <div class="modal fade modal-md" id="moreinformation" aria-hidden="true"
+        aria-labelledby="ModalAboutctUs"
+        tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="ModalSignIn">Noam Raanan</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"
+                aria-label="Close"></button>
+            </div>
+
+            <p class="Details">
+              <div class="thumb-lg member-thumb mx-auto"><img
+                  src="images/Chubby-image.jpeg"
+                  class="rounded-circle img-thumbnail" alt="profile-image"></div><br>
+              phone number : 050-4525239<br>
+              city : Beer Sheva<br>
+              E-mail : noamr@gmail.com<br>
+
+            </p>
+
+          </div>
+        </div>
+      </div>
+      <!-- More info Modal End -->
+
+
+      <!-- More info Modal Start -->
+      <div class="modal fade modal-md" id="moreinformation1" aria-hidden="true"
+        aria-labelledby="ModalAboutctUs"
+        tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="ModalSignIn">Lee Sayag</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"
+                aria-label="Close"></button>
+            </div>
+
+            <p class="Details">
+              <div class="thumb-lg member-thumb mx-auto"><img
+                  src="images/lee.jpg" class="rounded-circle img-thumbnail"
+                  alt="profile-image"></div><br>
+              phone number : 050-6432139<br>
+              city : Ramat Gan<br>
+              E-mail : sayaglee@gmail.com<br><br>
+
+            </p>
+
+          </div>
+        </div>
+      </div>
+      <!-- More info Modal End -->
+      <!-- More info Modal Start -->
+      <div class="modal fade modal-md" id="moreinformation2" aria-hidden="true"
+        aria-labelledby="ModalAboutctUs"
+        tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="ModalSignIn">Levav Shabtay</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"
+                aria-label="Close"></button>
+            </div>
+
+            <p class="Details">
+              <div class="thumb-lg member-thumb mx-auto"><img
+                  src="images/levav.jpg" class="rounded-circle img-thumbnail"
+                  alt="profile-image"></div><br>
+              phone number : 050-2537476<br>
+              city : Ashdod<br>
+              E-mail : levavsh@gmail.com<br><br>
+
+            </p>
+
+          </div>
+        </div>
+      </div>
+      <!-- More info Modal End -->
+      <!-- More info Modal Start -->
+      <div class="modal fade modal-md" id="moreinformation3" aria-hidden="true"
+        aria-labelledby="ModalAboutctUs"
+        tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="ModalSignIn">Roei Sendel</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"
+                aria-label="Close"></button>
+            </div>
+
+            <p class="Details">
+              <div class="thumb-lg member-thumb mx-auto"><img
+                  src="images/roei.jpg" class="rounded-circle img-thumbnail"
+                  alt="profile-image"></div><br>
+              phone number : 050-9020361<br>
+              city : Tel Aviv<br>
+              E-mail : roeisendel@gmail.com<br><br>
+
+            </p>
+
+          </div>
+        </div>
+      </div>
+      <!-- More info Modal End -->
+      <!-- More info Modal Start -->
+      <div class="modal fade modal-md" id="moreinformation4" aria-hidden="true"
+        aria-labelledby="ModalAboutctUs"
+        tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="ModalSignIn">Hadass Chen</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"
+                aria-label="Close"></button>
+            </div>
+
+            <p class="Details">
+              <div class="thumb-lg member-thumb mx-auto"><img
+                  src="images/hadass.jpg" class="rounded-circle img-thumbnail"
+                  alt="profile-image"></div><br>
+              phone number : 050-6424257<br>
+              city : Shaarei Tikva<br>
+              E-mail : hadasss@gmail.com<br><br>
+
+            </p>
+
+          </div>
+        </div>
+      </div>
+      <!-- More info Modal End -->
+
+
+
+      <!-- Bootstrap  and Jquery  CDN Scripts -->
+
+      <script type="text/javascript" src="js/scripts.js"></script>
+      <script
+        src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+        integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+        crossorigin="anonymous"></script>
+      <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+        integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+        crossorigin="anonymous"></script>
+
+      <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+      <script
+        src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    </body>
+
+  </html>
