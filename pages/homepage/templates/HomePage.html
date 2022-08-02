@@ -1,0 +1,243 @@
+<!--Home Page-->
+{% extends 'base.html' %}
+{% block title %}Home page{% endblock %}
+{% block page_body_main_content %}
+
+
+
+
+    <section class="colored-section" id="title">
+        <div class="container-fluid">
+            <!-- Title -->
+            <div class="row">
+                <div class="col-lg-6">
+                    <h1 class="big-heading">Meet new and interesting dogs nearby.</h1>
+                    {% if user == "" %}
+                        <button type="button" class="btn btn-dark btn-lg
+              signin-button-middle" href="#signinModal" id="signinbtn" data-bs-toggle="modal">
+                            <i class="fa-solid fa-arrow-right-to-bracket"></i> Sign In
+                        </button>
+                        <a id="signupbtn" href="/CreateUser" class="btn
+              btn-outline-light btn-lg signin-button-middle"
+                           tabindex="-1" role="button" aria-disabled="true">
+                            <i class="fa-solid fa-user-plus"></i> Sign Up
+                        </a>
+                    {% endif %}
+                </div>
+                <div class="col-lg-6">
+                    <img class="title-image" src="/static/images/main-image.png"
+                         alt="dogs-image"/>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+
+    <section class="white-section" id="features">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="feature-box col-lg-4">
+                    <i class="icon fas fa-check-circle fa-beat fa-4x"></i>
+                    <h3 class="feature-title">Easy to use</h3>
+                    <p>So easy to use, even your dog could do it.</p>
+                </div>
+
+                <div class="feature-box col-lg-4">
+                    <i class="icon fas fa-bullseye fa-beat fa-4x"></i>
+                    <h3 class="feature-title">Elite Clientele</h3>
+                    <p>We have the best dogs around.</p>
+                </div>
+
+                <div class="feature-box col-lg-4">
+                    <i class="icon fas fa-heart fa-beat fa-4x"></i>
+                    <h3 class="feature-title">Guaranteed to work</h3>
+                    <p>Find the love of your dog's life. </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+
+    <section class="colored-section" id="testimonials">
+        <div id="testimonial-carousel" class="carousel slide" data-ride="false">
+            <div class="carousel-inner">
+                <div class="carousel-item active container-fluid">
+                    <h2 class="testimonial-text">
+                        "I no longer have to sniff other dogs for love. I've found the
+                        hottest Corgi on DoggyDates. Woof."
+                    </h2>
+                    <img class="testimonial-image" src="/static/images/Chubby-image.jpeg"
+                         alt="dog-profile"/>
+                    <em>Chubby, Beersheba</em>
+                </div>
+                <div class="carousel-item container-fluid">
+                    <h2 class="testimonial-text">
+                        "My dog used to be so lonely, but with DoggyDates's help, he's
+                        found the love of his life. I think."
+                    </h2>
+                    <img class="testimonial-image" src="/static/images/Noam-image.jpeg"
+                         alt="lady-profile"/>
+                    <em>Noam, Beersheba</em>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button"
+                    data-bs-target="#testimonial-carousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button"
+                    data-bs-target="#testimonial-carousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Press -->
+
+    <section class="colored-section" id="press">
+        <img class="press-logo" src="/static/images/yazamut360.webp" alt="yazamut360-logo"
+        />
+        <img class="press-logo" src="/static/images/speedog.png" alt="speedog-logo"/>
+        <img class="press-logo" src="/static/images/cactus.webp" alt="cactuscapital-logo"
+        />
+        <img class="press-logo" src="/static/images/bgu.png" alt="bgu-logo"/>
+    </section>
+
+    <!--Counter Section START-->
+
+    <section class="wow fadeIn animated" style="visibility: visible;
+      animation-name: fadeIn">
+        <div class="container-fluid" id="counters">
+            <div class="row">
+                <!-- counter -->
+                <div
+                        class="col-md-3 col-sm-6 bottom-margin text-center counter-section
+            wow fadeInUp sm-margin-bottom-ten animated"
+                        data-wow-duration="300ms" style="visibility: visible;
+            animation-duration: 300ms;
+            animation-name: fadeInUp;">
+                    <i class="fa fa-users medium-icon"></i>
+                    <span id="anim-number-pizza" class="counter-number"></span>
+                    <span class="timer counter alt-font appear" data-to="1645"
+                          data-speed="7000">1645</span>
+                    <p class="counter-title">Total Users</p>
+                </div>
+                <!-- end counter -->
+                <!-- counter -->
+                <div
+                        class="col-md-3 col-sm-6 bottom-margin text-center counter-section
+            wow fadeInUp sm-margin-bottom-ten animated"
+                        data-wow-duration="600ms" style="visibility: visible;
+            animation-duration: 600ms;
+            animation-name: fadeInUp;">
+                    <i class="fa fa-dog medium-icon"></i>
+                    <span class="timer counter alt-font appear" data-to="2376"
+                          data-speed="7000">2376</span>
+                    <span class="counter-title">Tail Waggers</span>
+                </div>
+                <!-- end counter -->
+                <!-- counter -->
+                <div
+                        class="col-md-3 col-sm-6 bottom-margin-small text-center
+            counter-section wow fadeInUp xs-margin-bottom-ten animated"
+                        data-wow-duration="900ms" style="visibility: visible;
+            animation-duration: 900ms;
+            animation-name: fadeInUp;">
+                    <i class="fa fa-heart medium-icon"></i>
+                    <span class="timer counter alt-font appear" data-to="3541"
+                          data-speed="7000">3541</span>
+                    <span class="counter-title">Succesful Matches</span>
+                </div>
+                <!-- end counter -->
+                <!-- counter -->
+                <div class="col-md-3 col-sm-6 text-center counter-section wow fadeInUp
+            animated" data-wow-duration="1200ms"
+                     style="visibility: visible;
+            animation-duration: 1200ms;
+            animation-name: fadeInUp;">
+                    <i class="fa fa-store medium-icon"></i>
+                    <span class="timer counter alt-font appear" data-to="600"
+                          data-speed="7000">600</span>
+                    <span class="counter-title">MarketPlace Posts</span>
+                </div>
+                <!-- end counter -->
+            </div>
+        </div>
+    </section>
+    <!--Counter Section END-->
+
+    <!-- Call to Action -->
+
+    <section class="colored-section" id="cta">
+        <div class="container-fluid">
+            <h3 class="big-heading">
+                Find the True Love of Your Dog's Life Today.
+            </h3>
+            {% if user == "" %}
+                <button type="button" class="btn btn-dark btn-lg signin-button-middle"
+                        data-bs-toggle="modal"
+                        data-bs-target="#signinModal" id="signinbtn">
+                    <i class="fa-solid fa-arrow-right-to-bracket"></i> Sign In
+                </button>
+                <a id="signupbtn" href="/CreateUser" class="btn btn-outline-light
+          btn-lg signin-button-middle" tabindex="-1"
+                   role="button" aria-disabled="true">
+                    <i class="fa-solid fa-user-plus"></i> Sign Up
+                </a>
+            {% endif %}
+        </div>
+    </section>
+    <!-- SignIn Modal Start -->
+    <div class="modal fade" id="signinModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ModalSignIn">Sign In</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="mb-lg-0">Enter your user email & password to enter your
+                        account</p>
+                    <form action="/login" method="post" class="row g-3 needs-validation" novalidate>
+                        <div class="modal-body text-center">
+                            <div class="form-floating mb-3">
+                                <input type="email" name="email" class="form-control" id="floatingInput"
+                                       placeholder="userName@example.com"
+                                       required/>
+                                <label for="floatingInput">Email address</label>
+                                <div class="invalid-feedback">
+                                    Please Enter A Valid Email Address, Format : mdo@example.com
+                                </div>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="password" name="password" class="form-control"
+                                       id="floatingInputGrid" placeholder="password" minlength="8"
+                                       maxlength="15" required/>
+                                <label for="floatingInputGrid">Password</label>
+                                <div class="invalid-feedback">
+                                    Please provide a valid password between 8-15 numbers/letters
+                                </div>
+                            </div>
+                            <br/>
+                            <button type="submit" class="btn btn-dark" id="submit">
+                                <a href="index.html"></a>
+                                Sign In
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer text-center mx-auto">
+                    <p class="text-end">
+                        Don't have an account ?
+                        <a href="/CreateUser" class="text-primery">Click HERE</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- SignIn Modal End -->
+{% endblock %}

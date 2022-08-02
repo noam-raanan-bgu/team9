@@ -1,0 +1,595 @@
+<!--my matches Page-->
+{% extends 'base.html' %}
+{% block title %}User profile{% endblock %}
+{% block page_head_css %}
+    <link rel="stylesheet" href="{{ url_for('MarketPlace.static', filename='css/marketPlace.css') }}">
+{% endblock %}
+{% block page_body_main_content %}
+    <nav class="navbar navbar-light bg-light" id="marketplace">
+        <ul class="nav nav-tabs me-auto" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <a class="nav-link active" id="nav-home-tab" data-bs-toggle="tab"
+                   data-bs-target="#nav-home" type="button"
+                   role="tab" aria-controls="nav-home" aria-selected="true">User
+                    Profile</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="nav-profile-tab" data-bs-toggle="tab"
+                   data-bs-target="#nav-profile" type="button"
+                   role="tab" aria-controls="nav-profile" aria-selected="false">Dog
+                    Profile</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container-fluid" id="profile">
+        <div class="products">
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
+                     aria-labelledby="nav-home-tab">
+                    <!--User Profile-->
+
+                    <div class="d-flex justify-content-between p-3 bg-white mb-3
+              align-items-center">
+                        <span class="font-weight-bold text-uppercase">User Details</span>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <button type="button" class="btn btn-dark btn-m
+                  signin-button-nav" data-bs-toggle="modal"
+                                    data-bs-target="#edituser">
+                                <i class="fa-solid fa-user-pen"></i> Edit Details
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="card">
+                                <div class="info Data" style="justify-content:
+                    space-between;">
+                                    <img class="img-account-profile rounded-circle mb-2"
+                                         src="{{ url_for("Create_user.static",filename="media/") }}{{ user['image'] }}"
+                                         alt=""
+                                         width="100" height="100">
+                                    <hr>
+                                    <h4 style="margin-bottom: 5px;"> My Name</h4>
+                                    <p style="margin-bottom: 10px;">{{ user['USER_NAME'] }}</p>
+                                    <h4 style="margin-bottom: 5px;"> Email</h4>
+                                    <p style="margin-bottom: 10px;">{{ user['email'] }}</p>
+                                    <h4 style="margin-bottom: 5px;"> My Password</h4>
+                                    <p style="margin-bottom: 10px;">{{ user['password'] }}</p>
+                                    <h4 style="margin-bottom: 5px;"> Birthday</h4>
+                                    <p style="margin-bottom: 10px;">{{ user['dob'] }}</p>
+                                    <h4 style="margin-bottom: 5px;"> Phone number</h4>
+                                    <p style="margin-bottom: 10px;">{{ user['phone'] }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="edituser" data-bs-backdrop="static"
+                     data-bs-keyboard="false" tabindex="-1"
+                     aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered
+              modal-dialog-scrollable">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel">Edit Details</h5>
+                                <button type="button" class="btn-close"
+                                        data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <!-- Profile picture card-->
+                                        <div class="card mb-4">
+                                            <div class="card-header">Profile Picture</div>
+                                            <div class="card-body text-center">
+                                                <!-- Profile picture image-->
+                                                <img class="img-account-profile rounded-circle mb-2" width="40%"
+                                                     src="
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                             {{ url_for("Create_user.static",filename="media/") }}{{ user['image'] }}"
+                                                     alt="">
+                                                <!-- Profile picture help block-->
+                                                <div class="small font-italic text-muted mb-4">JPG or
+                                                    PNG
+                                                    no larger than 5 MB
+                                                </div>
+                                                <!-- Profile picture upload button-->
+                                                <button class="btn btn-dark btn-m" type="button">Upload
+                                                    new
+                                                    image
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <!-- Account details card-->
+                                        <div class="card mb-4 mb-xl-0">
+                                            <div class="card-header">User's Details</div>
+                                            <div class="card-body">
+                                                <form action="/update_profile" method="post"
+                                                      enctype="multipart/form-data">
+                                                    <!-- Form Group (UserName)-->
+                                                    <div class="mb-3">
+                                                        <label class="small mb-1" for="inputPassword">My
+                                                            Name</label>
+                                                        <input name="name" class="form-control form-control-md"
+                                                               id="inputPassword" type="text"
+                                                               placeholder="Enter
+                                your Name" value="{{ user['USER_NAME'] }}" required/>
+                                                    </div>
+                                                    <!-- Form Group (gender name)-->
+                                                    <div class="mb-3mb-3">
+                                                        <label class="small mb-1" for="inputLastName">Gender</label>
+                                                        <input class="form-control form-control-md"
+                                                               id="inputGender" type="text" placeholder="Enter
+                                your
+                                Gender" value="Male" required/>
+                                                    </div>
+
+                                                    <!-- Form Group (email address)-->
+                                                    <div class="mb-3">
+                                                        <label class="small mb-1" for="inputEmailAddress">Email
+                                                            address</label>
+                                                        <input class="form-control form-control-md"
+                                                               id="inputEmailAddress" name="email" type="email"
+                                                               placeholder="Enter your email address"
+                                                               value="{{ user['email'] }}" required/>
+                                                    </div>
+                                                    <!-- Form Group (password)-->
+                                                    <div class="mb-3">
+                                                        <label class="small mb-1" for="inputPassword">Password</label>
+                                                        <input class="form-control form-control-md"
+                                                               name="password"
+                                                               id="inputPassword" type="password"
+                                                               placeholder="Enter your Password"
+                                                               value="{{ user['password'] }}"
+                                                               required/>
+                                                    </div>
+
+                                                    <div class="mb-3">
+                                                        <label class="small mb-1"
+                                                               for="ConfirminputPassword">Confirm
+                                                            Password</label>
+                                                        <input class="form-control form-control-md"
+                                                               id="ConfirminputPassword" type="password"
+                                                               placeholder="Confirm your Password"
+                                                               value="{{ user['password'] }}" required/>
+                                                    </div>
+                                                    <!-- Form Group (Date of birth)-->
+                                                    <div class="mb-3">
+                                                        <label class="small mb-1" for="inputBirthday">Birthday</label>
+                                                        <input class="form-control form-control-md"
+                                                               id="inputBirthday" type="date" name="dob"
+
+                                                                {% set bday = user['dob']%}
+
+                                                               placeholder="Enter your birthday" value="{{ bday }}" required/>
+                                                    </div>
+
+                                                    <!-- Form Group (Phone)-->
+                                                    <!-- name,email,password,dob,phone -->
+                                                    <div class="mb-3">
+                                                        <label class="small mb-1" for="inputPhone">Phone</label>
+                                                        <input class="form-control form-control-md"
+                                                               id="inputPhone" type="tel" name='phone' placeholder="Enter
+                                your
+                                Phone (000-000-0000)" value="{{ user['phone'] }}"
+
+                                                               required/>
+                                                    </div>
+
+                                                    <!-- Save changes button-->
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary"
+                                                                data-bs-dismiss="modal">Close
+                                                        </button>
+                                                        <button type="submit" class="btn btn-dark btn-m">Save Changes
+                                                        </button>
+                                                    </div>
+                                                </form>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="tab-pane fade" id="nav-edit" role="tabpanel"
+                     aria-labelledby="nav-edit-tab">
+                </div>
+                <div class="tab-pane fade" id="nav-profile" role="tabpanel"
+                     aria-labelledby="nav-profile-tab">
+                    <!--Dog Profile-->
+                    <div class="d-flex justify-content-between p-3 bg-white mb-3
+              align-items-center">
+                        <span class="font-weight-bold text-uppercase">Dog Details</span>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <button type="button" class="btn btn-dark btn-m
+                  signin-button-nav" data-bs-toggle="modal"
+                                    data-bs-target="#plusmodal">
+                                <i class="fa-solid fa-plus"></i> Add Dog
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        {% for dog in dogs %}
+                            <div class="col-lg-4">
+                                <div class="card">
+                                    <div class="info Data" style="justify-content:
+                    space-between;">
+                                        <img class="img-account-profile rounded-circle mb-2"
+                                             src="{{ url_for("Create_user.static", filename="media/") }}{{ dog[8] }}"
+                                             alt="" width="100" height="100">
+                                        <hr>
+                                        <h4 style="margin-bottom: 5px;"> Dog Name</h4>
+                                        <p style="margin-bottom: 10px;">{{ dog[2] }}</p>
+                                        <h4 style="margin-bottom: 5px;"> Birthday</h4>
+                                        <p style="margin-bottom: 10px;"> {{ dog[6] }}</p>
+                                        <h4 style="margin-bottom: 5px;"> Gender</h4>
+                                        <p style="margin-bottom: 10px;">{{ dog[4] }}</p>
+                                        <h4 style="margin-bottom: 5px;"> Nature</h4>
+                                        <p style="margin-bottom: 10px;">{{ dog[7] }}</p>
+                                        <h4 style="margin-bottom: 5px;"> Size</h4>
+                                        <p style="margin-bottom: 10px;">{{ dog[5] }}</p>
+                                        <h4 style="margin-bottom: 5px;"> Type</h4>
+                                        <p style="margin-bottom: 10px;">{{ dog[3] }}</p>
+                                    </div>
+                                    <span>
+
+                    <button type="button" class="btn btn-dark btn-m
+                      signin-button-nav" data-bs-toggle="modal"
+                            data-bs-target="#numdogedit{{ dog[1] }}">
+                      <i class="fa-solid fa-pen"></i> Edit Details
+                    </button>
+                                        <a href="/delete_dog/{{ dog[1] }}"><button
+                                                class="btn btn-danger">Remove Dog</button></a>
+                  </span>
+                                </div>
+                            </div>
+                            <div class="modal fade" id="numdogedit{{ dog[1] }}" tabindex="-1"
+                                 aria-labelledby="numdogedit{{ dog[1] }}" aria-hidden="true">
+                                <div class="modal-dialog modal-xl modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Edit Dog Details</h5>
+                                            <button type="button" class="btn-close"
+                                                    data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row">
+                                                <div class="col-lg-4">
+                                                    <div class="card mb-4 mb-xl-0">
+                                                        <h3 class="card-header">DOG#{{ dog[1] }}</h3>
+                                                        <div class="card-header">Profile Picture</div>
+                                                        <div class="card-body text-center">
+                                                            <!-- Profile picture image-->
+                                                            <img class="img-account-profile rounded-circle mb-2"
+                                                                 src="
+                                                                         {{ url_for("Create_user.static", filename="media/") }}{{ dog[8] }}"
+                                                                 alt="" width="100" height="100">
+                                                            <!-- Profile picture help block-->
+                                                            <div class="small font-italic text-muted mb-4">JPG
+                                                                or
+                                                                PNG no larger than 5 MB
+                                                            </div>
+                                                            <!-- Profile picture upload button-->
+                                                            <button class="btn btn-dark btn-m" type="button">Upload
+                                                                new image
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-8">
+                                                    <div class="card mb-4">
+                                                        <div class="card-header">Dog's Details</div>
+                                                        <div class="card-body">
+
+                                                            <form action="/update_dog" method="post">
+
+                                                                <input type="hidden" value="{{ dog[1] }}" name="id">
+                                                                <!-- Form Group (DogName)-->
+                                                                <div class="form-outline my-4">
+                                                                    <label class="form-label" for="userEmail">My dog
+                                                                        Name</label>
+                                                                    <input class="form-control form-control-md"
+                                                                           name="name"
+                                                                           type="text" placeholder="Enter Dog Name"
+                                                                           value="{{ dog[2] }}" required/>
+                                                                </div>
+                                                                <!-- Form Row-->
+                                                                <div class="row gx-3 mb-3">
+                                                                    <!-- Form Group (Date of birth)-->
+                                                                    <div class="col-md-6">
+                                                                        <!-- <label class="small mb-1" for="newUserDATE"><i
+                                                                            class="fa-solid fa-cake-candles"></i>
+                                                                          Birthday</label> -->
+
+                                                                        <label class="small mb-1" for="inputBirthday">Birthday</label>
+                                                                        {% set dbday = dog[6] %}
+
+                                                                        <input class="form-control form-control-md"
+                                                                               id="inputBirthday" type="date" name="dob"
+                                                                               placeholder="Enter
+                                      your birthday" value="{{ dbday }}" required/>
+                                                                    </div>
+
+
+                                                                    <!-- Form Group (gender )-->
+                                                                    <div class="col-md-6">
+                                                                        <label class="small mb-1" for="isnputGender">Gender</label>
+                                                                        <select class="form-select"
+                                                                                aria-label="Category" id="inputGender"
+                                                                                name="gender"
+                                                                                required>
+                                                                            <option selected disabled hidden
+                                                                                    value=""></option>
+                                                                            {% if dog[4] == "Male" %}
+                                                                                <option selected>Male</option>
+                                                                                <option>Female</option>
+                                                                            {% else %}
+                                                                                <option>Male</option>
+                                                                                <option selected>Female</option>
+                                                                            {% endif %}
+                                                                        </select>
+                                                                    </div>
+
+                                                                    <!-- Form Group (Nature )-->
+                                                                    <div class="col-md-6">
+                                                                        <label class="small mb-1" for="inputNature">Nature</label>
+                                                                        <select class="form-select" name="nature"
+                                                                                aria-label="Category" id="inputNature"
+                                                                                required>
+                                                                            {% if dog[7] == "Relaxed" %}
+                                                                                <option selected>Relaxed</option>
+                                                                                <option>Energetic</option>
+                                                                                <option>Balanced</option>
+                                                                            {% elif dog[7] == "Energetic" %}
+                                                                                <option>Relaxed</option>
+                                                                                <option selected>Energetic</option>
+                                                                                <option>Balanced</option>
+                                                                            {% elif dog[7] == "Balanced" %}
+                                                                                <option>Relaxed</option>
+                                                                                <option>Energetic</option>
+                                                                                <option selected>Balanced</option>
+
+                                                                            {% endif %}
+                                                                        </select>
+                                                                    </div>
+
+                                                                    <!-- Form Group ( Breed)-->
+                                                                    <div class="col-md-6">
+                                                                        <label class="small mb-1"
+                                                                               for="inputBreed">Breed</label>
+                                                                        <select class="form-select"
+                                                                                aria-label="Dog_Breed"
+                                                                                name="dog_type"
+                                                                                id="Dog_Breed"
+                                                                                required>
+                                                                            {% if dog[3] == "French Bulldog" %}
+                                                                                <option selected>French
+                                                                                    Bulldog
+                                                                                </option>
+                                                                                <option value="German Shepherd">German
+                                                                                    Shepherd
+                                                                                </option>
+                                                                                <option value="Poodle">Poodle</option>
+
+                                                                            {% elif dog[3] == "German Shepherd" %}
+
+                                                                                <option>French
+                                                                                    Bulldog
+                                                                                </option>
+                                                                                <option selected>German
+                                                                                    Shepherd
+                                                                                </option>
+                                                                                <option>Poodle</option>
+
+                                                                            {% elif dog[3] == "Poodle" %}
+                                                                                <option>French
+                                                                                    Bulldog
+                                                                                </option>
+                                                                                <option>German
+                                                                                    Shepherd
+                                                                                </option>
+                                                                                <option selected>Poodle</option>
+                                                                            {% endif %}
+                                                                        </select>
+                                                                    </div>
+
+
+                                                                    <!-- Form Group (size )-->
+                                                                    <div class="col-md-6">
+                                                                        <label class="small mb-1"
+                                                                               for="inputSize">Size</label>
+                                                                        <select class="form-select"
+                                                                                aria-label="Dog_Size"
+                                                                                name="size"
+                                                                                id="Dog_Size"
+                                                                                required>
+
+                                                                            {% if dog[5] == "Big" %}
+                                                                                <option selected>Big</option>
+                                                                                <option>Mid</option>
+                                                                                <option>Small</option>
+                                                                            {% elif dog[5] == "Mid" %}
+                                                                                <option>Big</option>
+                                                                                <option selected>Mid</option>
+                                                                                <option>Small</option>
+                                                                            {% elif dog[5] == "Small" %}
+                                                                                <option>Big</option>
+                                                                                <option>Mid</option>
+                                                                                <option selected>Small</option>
+                                                                            {% endif %}
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- Form Row -->
+                                                                <!-- Save changes button-->
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary"
+                                                                            data-bs-dismiss="modal">Close
+                                                                    </button>
+                                                                    <button type="submit" class="btn btn-dark btn-m">
+                                                                        Save
+                                                                        changes
+                                                                    </button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <!--Edit Dog Details Modal-->
+
+                    <!-- Add Dog Modal Start -->
+                    <div class="modal fade" id="plusmodal" aria-hidden="true"
+                         aria-labelledby="plusmodal" tabindex="-1">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="ModalSignIn">Add a new dog</h5>
+                                    <button type="button" class="btn-close"
+                                            data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body" style="text-align: left;">
+                                    <form method="post" action="/CreateDog" enctype="multipart/form-data"
+                                          class="needs-validation" novalidate>
+                                        <div class="mb-3 col-7">
+                                            <label class="form-label" for="newDogName">Dog's Name*</label>
+                                            <input type="text" id="newUserName" class="form-control
+                          form-control-lg" name="name" required/>
+                                            <div class="invalid-feedback">
+                                                Please provide a valid name.
+                                            </div>
+                                        </div>
+
+                                        <div class="form-outline my-createPage">
+
+                                            <div class="mb-3 col-7">
+                                                <label for="title" class="form-label">Dog Breed*</label>
+                                                <select class="form-select" id="choose-category" name="dog_type"
+                                                        required>
+                                                    <option selected disabled hidden value=""></option>
+                                                    <option>French Bulldog</option>
+                                                    <option>German Shepherd</option>
+                                                    <option>Poodle</option>
+                                                </select>
+                                                <div class="invalid-feedback">
+                                                    Please provide a valid breed.
+                                                </div>
+                                            </div>
+
+                                            <div class="mb-3 col-7">
+                                                <label for="title" class="form-label">Dog Gender*</label>
+                                                <select class="form-select" id="choose-category" name="gender"
+                                                        required>
+                                                    <option selected disabled hidden value=""></option>
+                                                    <option>Male</option>
+                                                    <option>Female</option>
+                                                </select>
+                                                <div class="invalid-feedback">
+                                                    Please provide a valid gender.
+                                                </div>
+                                            </div>
+
+                                            <div class="mb-3 col-7">
+                                                <label for="title" class="form-label">Size*</label>
+                                                <select class="form-select" id="choose-category" name="size"
+                                                        required>
+                                                    <option selected disabled hidden value=""></option>
+                                                    <option>Big</option>
+                                                    <option>Mid</option>
+                                                    <option>Small</option>
+                                                </select>
+                                                <div class="invalid-feedback">
+                                                    Please provide a valid size.
+                                                </div>
+                                            </div>
+
+
+                                            <div class="form-floating mb-3">
+                                                <input type="date" id="newUserDATE"
+                                                       class="form-control
+                            form-control-lg"
+                                                       name="dob"
+                                                       required/>
+                                                <label class="form-label" for="newUserDATE"> Date Birth*</label>
+                                                <div class="invalid-feedback">Please provide a valid
+                                                    date.
+                                                </div>
+                                            </div>
+
+                                            <div class="col-7">
+                                                <label for="title" class="form-label">Dog Nature*</label>
+                                                <select class="form-select" id="choose-category" name="nature"
+                                                        required>
+                                                    <option selected disabled hidden value=""></option>
+                                                    <option>Relaxed</option>
+                                                    <option>Energetic</option>
+                                                    <option>Balanced</option>
+                                                </select>
+                                                <div class="invalid-feedback">
+                                                    Please provide a valid nature.
+                                                </div>
+                                            </div>
+
+                                            <label for="newProfilePhoto" class="form-label">Upload
+                                                Profile
+                                                Picture</label>
+                                            <input class="form-control" type="file"
+                                                   id="newProfilePhoto"
+                                                   accept=".jpeg,.jpg,.png"
+                                                   name="image"
+                                                   required/>
+                                            <div class="invalid-feedback">Please provide one valid
+                                                main
+                                                photo. (jpeg or png)
+                                            </div>
+
+                                        </div>
+                                        <hr>
+                                        <button type="submit" class="btn btn-dark" id="submit">Save</button>
+                                    </form>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Add Dog Modal End -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

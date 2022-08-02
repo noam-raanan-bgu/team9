@@ -1,0 +1,491 @@
+<!--market place Page-->
+{% extends 'base.html' %}
+{% block title %}Market Place {% endblock %}
+
+{% block page_head_css %}
+    <link rel="stylesheet" href="{{ url_for('MarketPlace.static', filename='css/marketPlace.css') }}">
+{% endblock %}
+
+{% block page_body_main_content %}
+    <!--Main Content Area START-->
+    <main id="main">
+        <section class="container my-2 p-3">
+            <nav class="navbar navbar-light bg-light justify-content"
+                 id="marketplace">
+                <ul class="nav nav-tabs me-auto" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link active" id="nav-home-tab" data-bs-toggle="tab"
+                           href="#nav-home" type="button"
+                           role="tab" aria-controls="nav-home" aria-selected="true">Toys</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="nav-profile-tab" data-bs-toggle="tab"
+                           href="#nav-profile" type="button"
+                           role="tab" aria-controls="nav-profile" aria-selected="false">Accessories</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="nav-contact-tab" data-bs-toggle="tab"
+                           href="#nav-contact" type="button"
+                           role="tab" aria-controls="nav-contact" aria-selected="false">Training
+                            Equipment</a>
+                    </li>
+                </ul>
+
+
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button type="button" class="btn btn-dark btn-m signin-button-nav"
+                            data-bs-toggle="modal"
+                            href="#new-post-modal">
+                        <i class="fa-solid fa-plus"></i> New Post
+                    </button>
+                    <button type="button" class="btn btn-dark btn-m signin-button-nav"
+                            data-bs-toggle="modal"
+                            href="#myposts" id="my posts">
+                        My Posts
+                    </button>
+                </div>
+            </nav>
+        </section>
+
+        <div class="products">
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
+                     aria-labelledby="nav-home-tab">
+                    <section class="container" id="market">
+                        <div class="content">
+
+                            <div class="container">
+                                <div class="row g-3">
+                            
+                            
+                            {%for data in market_data%}
+                                    <div class="col-md-4">
+                                        <div class="card" id="cardMarket">
+                                            <img src={{url_for("MarketPlace.static",filename="media/")}}{{data[6]}}    class="card-img-top"
+                                            />
+                                            <div class="card-body">
+                                                <div class="d-flex justify-content-between">
+                                                    <span class="font-weight-bold">{{data[0]}} </span>
+                                                    {%if data[3] == "Yes" %}
+                                                    <img src="/static/images/free_32px.png" class="free-icon"/>
+                                                    {%else%}
+                                                    <span class="font-weight-bold">{{data[4]}} ₪</span>
+                                                    {%endif%}
+                                                </div>
+                                                <p class="card-text mb-1 mt-1">
+                                                    {{data[5]}}
+                                                </p>
+                                                <div class="d-flex align-items-center flex-row"
+                                                     id="time-posted">
+                                                    <i class="fa-solid fa-calendar"></i> &nbsp
+                                                    
+                                                    {% if ((((data[2] - now).total_seconds())/60)* -1) | int > 60 %}
+                                                    
+                                                    {{(((((data[2] - now).total_seconds())/60)* -1) / 60) | int}}
+                                                    hours
+                                                    ago
+
+                                                    {%else%}
+                                                    {{((((data[2] - now).total_seconds())/60)* -1) | int}}
+                                                    minutes
+                                                    ago
+                                                    {%endif%}
+                                                </div>
+                                            </div>
+                                            <hr/>
+                                            <button type="button" class="btn btn-dark btn-m
+                          signin-button-middle" data-bs-toggle="modal"
+                                                    href="#moreinformation{{data[11]}}">
+                                                <i class="fa-solid fa-circle-info"></i> contact
+                                                information
+                                            </button>
+                                        </div>
+                                    </div>
+                            
+
+                                    <div class="modal fade modal-md" id="moreinformation{{data[11]}}" aria-hidden="true"
+                                    aria-labelledby="ModalAboutctUs"
+                                    tabindex="-1">
+                                   <div class="modal-dialog">
+                                       <div class="modal-content">
+                                           <div class="modal-header">
+                                               <h5 class="modal-title" id="ModalSignIn">{{data[7]}}</h5>
+                                               <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                       aria-label="Close"></button>
+                                           </div>
+                           
+                                           <p class="Details">
+                                           <div class="thumb-lg member-thumb mx-auto"><img
+                                                   src="{{url_for("Create_user.static", filename="media/")}}{{data[12]}}" class="rounded-circle img-thumbnail"
+                                                   alt="profile-image"></div>
+                                           <br>
+                                           phone number : {{data[9]}}<br>
+                                           city : {{data[10]}}<br>
+                                           E-mail : {{data[8]}}<br><br>
+                           
+                                           </p>
+                           
+                                       </div>
+                                   </div>
+                               </div>
+                            
+                            {%endfor%}
+                            
+                            
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="tab-pane fade" id="nav-profile" role="tabpanel"
+                     aria-labelledby="nav-profile-tab">
+                    <section class="container" id="market">
+                        <div class="content">
+                            <div class="container">
+                                <div class="row g-3">
+
+                                    {%for data in accessories_query%}
+                                    <div class="col-md-4">
+                                        <div class="card" id="cardMarket">
+                                            <img src={{url_for("MarketPlace.static",filename="media/")}}{{data[6]}}    class="card-img-top"
+                                            />
+                                            <div class="card-body">
+                                                <div class="d-flex justify-content-between">
+                                                    <span class="font-weight-bold">{{data[0]}} </span>
+                                                    {%if data[3] == "Yes" %}
+                                                    <img src="/static/images/free_32px.png" class="free-icon"/>
+                                                    {%else%}
+                                                    <span class="font-weight-bold">{{data[4]}} ₪</span>
+                                                    {%endif%}
+                                                </div>
+                                                <p class="card-text mb-1 mt-1">
+                                                    {{data[5]}}
+                                                </p>
+                                                <div class="d-flex align-items-center flex-row"
+                                                     id="time-posted">
+                                                    <i class="fa-solid fa-calendar"></i> &nbsp
+                                                    
+                                                    {% if ((((data[2] - now).total_seconds())/60)* -1) | int > 60 %}
+                                                    
+                                                    {{(((((data[2] - now).total_seconds())/60)* -1) / 60) | int}}
+                                                    hours
+                                                    ago
+
+                                                    {%else%}
+                                                    {{((((data[2] - now).total_seconds())/60)* -1) | int}}
+                                                    minutes
+                                                    ago
+                                                    {%endif%}
+                                                </div>
+                                            </div>
+                                            <hr/>
+                                            <button type="button" class="btn btn-dark btn-m
+                          signin-button-middle" data-bs-toggle="modal"
+                                                    href="#moreinformation{{data[11]}}">
+                                                <i class="fa-solid fa-circle-info"></i> contact
+                                                information
+                                            </button>
+                                        </div>
+                                    </div>
+                            
+
+                                    <div class="modal fade modal-md" id="moreinformation{{data[11]}}" aria-hidden="true"
+                                    aria-labelledby="ModalAboutctUs"
+                                    tabindex="-1">
+                                   <div class="modal-dialog">
+                                       <div class="modal-content">
+                                           <div class="modal-header">
+                                               <h5 class="modal-title" id="ModalSignIn">{{data[7]}}</h5>
+                                               <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                       aria-label="Close"></button>
+                                           </div>
+                           
+                                           <p class="Details">
+                                            <div class="thumb-lg member-thumb mx-auto"><img
+                                                src="{{url_for("Create_user.static", filename="media/")}}{{data[12]}}" class="rounded-circle img-thumbnail"
+                                                alt="profile-image"></div>
+                                           <br>
+                                           phone number : {{data[9]}}<br>
+                                           city : {{data[10]}}<br><br>
+                                           <a href="mailto:{{data[8]}}">Contact {{data[7]}}</a><br><br>
+                                           </p>
+                           
+                                       </div>
+                                   </div>
+                               </div>
+                            
+                            {%endfor%}
+                                    
+
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="tab-pane fade" id="nav-contact" role="tabpanel"
+                     aria-labelledby="nav-contact-tab">
+                    <section class="container" id="market">
+                        <div class="content">
+                            <div class="container">
+                                <div class="row g-3">
+                                   
+                                   
+                                   
+                                    {%for data in training%}
+                                    <div class="col-md-4">
+                                        <div class="card" id="cardMarket">
+                                            <img src={{url_for("MarketPlace.static",filename="media/")}}{{data[6]}}    class="card-img-top"
+                                            />
+                                            <div class="card-body">
+                                                <div class="d-flex justify-content-between">
+                                                    <span class="font-weight-bold">{{data[0]}} </span>
+                                                    {%if data[3] == "Yes" %}
+                                                    <img src="/static/images/free_32px.png" class="free-icon"/>
+                                                    {%else%}
+                                                    <span class="font-weight-bold">{{data[4]}} ₪</span>
+                                                    {%endif%}
+                                                </div>
+                                                <p class="card-text mb-1 mt-1">
+                                                    {{data[5]}}
+                                                </p>
+                                                <div class="d-flex align-items-center flex-row"
+                                                     id="time-posted">
+                                                    <i class="fa-solid fa-calendar"></i> &nbsp
+                                                    
+                                                    {% if ((((data[2] - now).total_seconds())/60)* -1) | int > 60 %}
+                                                    
+                                                    {{(((((data[2] - now).total_seconds())/60)* -1) / 60) | int}}
+                                                    hours
+                                                    ago
+
+                                                    {%else%}
+                                                    {{((((data[2] - now).total_seconds())/60)* -1) | int}}
+                                                    minutes
+                                                    ago
+                                                    {%endif%}
+                                                </div>
+                                            </div>
+                                            <hr/>
+                                            <button type="button" class="btn btn-dark btn-m
+                          signin-button-middle" data-bs-toggle="modal"
+                                                    href="#moreinformation{{data[11]}}" >
+                                                <i class="fa-solid fa-circle-info"></i> contact
+                                                information
+                                            </button>
+                                        </div>
+                                    </div>
+                            
+
+                                    <div class="modal fade modal-md" id="moreinformation{{data[11]}}" aria-hidden="true"
+                                    aria-labelledby="ModalAboutctUs"
+                                    tabindex="-1">
+                                   <div class="modal-dialog">
+                                       <div class="modal-content">
+                                           <div class="modal-header">
+                                               <h5 class="modal-title" id="ModalSignIn">{{data[7]}}</h5>
+                                               <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                       aria-label="Close"></button>
+                                           </div>
+                           
+                                           <p class="Details">
+                                            <div class="thumb-lg member-thumb mx-auto"><img
+                                                src="{{url_for("Create_user.static", filename="media/")}}{{data[12]}}" class="rounded-circle img-thumbnail"
+                                                alt="profile-image"></div>
+                                           <br>
+                                           phone number : {{data[9]}}<br>
+                                           city : {{data[10]}}<br>
+                                           E-mail : {{data[8]}}<br><br>
+                           
+                                           </p>
+                           
+                                       </div>
+                                   </div>
+                               </div>
+                            
+                            {%endfor%}
+
+
+
+
+                                
+
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+    <br>
+    <!--Main Content Area END-->
+    <!--New Post Modal START-->
+    <div class="modal fade" id="new-post-modal" data-bs-backdrop="static"
+         data-bs-keyboard="false" tabindex="-1"
+         aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">
+                        Create New Post
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                </div>
+
+
+
+                <div class="modal-body" id="create-post" style="text-align: left;">
+
+                    <form method="post"  class="row g-3 needs-validation" id="create-post" action="/MarketPlace" enctype="multipart/form-data" novalidate>
+
+                        <div class="col md-3">
+                            <label for="Image" class="form-label">Choose image:</label>
+                            <input class="form-control" name="image" type="file" id="formFile"
+                                   onchange="preview()"/>
+                            <button onclick="clearImage()" class="btn btn-outline-dark
+                    mt-3">
+                                Clear
+                            </button>
+                        </div>
+
+                        <div class="col md-9">
+                            <img id="frame" src="" class="img-fluid"/>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="title" class="form-label">Title</label>
+                            <input type="text" name="title" class="form-control" id="post-title"
+                                   maxlength="100" minlength="10" placeholder=""
+                                   value="" required>
+                            <div class="invalid-feedback">
+                                Please write 10-100 characters.
+                            </div>
+                        </div>
+
+                        
+
+                        <div class="col-7">
+                            <label for="title" class="form-label">Category</label>
+                            <select class="form-select" id="choose-category" name="category" required>
+                                <option selected disabled value="">Choose a category</option>
+                                <option value="1">Toys</option>
+                                <option value="2">Accessories</option>
+                                <option value="3">Training Equipment</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Valid category is required.
+                            </div>
+                        </div>
+
+                       
+                        <div class="col-12">
+                            <label for="paid" class="form-label">Is free?</label>
+                            <div class="form-check">
+                                <input id="chkYes" name="isfree" value="Yes" type="radio"
+                                       class="form-check-input" onclick="EnableDisableTextBox()"
+                                       required>
+                                <label class="form-check-label" for="chkYes">Yes</label>
+                            </div>
+                       
+                            <div class="form-check">
+                                <input id="chkNo" name="isfree" value="No"  type="radio"
+                                       class="form-check-input" onclick="EnableDisableTextBox()"
+                                       required>
+                                <label class="form-check-label" for="chkNo">No</label>
+                            </div>
+                            <div class="invalid-feedback">
+                                is required.
+                            </div>
+                        </div>
+
+                        <div class="col-md-5">
+                            <label for="price" class="form-label">Price</label>
+                            <input type="text" class="form-control" name="price" id="txtPrice" value=""
+                                   disabled="disabled" required>
+                        </div>
+                        <div class="invalid-feedback">
+                            Valid price is required.
+                        </div>
+
+                        
+
+                        <div class="col-12">
+                            <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"></textarea>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary reset-btn"
+                                    data-bs-dismiss="modal" onclick="resetForm()">
+                                Close
+                            </button>
+
+
+                            <button class="btn btn-dark" id="submit" type="submit">Create</button>
+                        </div>
+                    </form>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--New Post Modal END-->
+    <!-- My Posts Modal Start -->
+    <div class="modal fade modal-m" id="myposts" aria-hidden="true"
+         aria-labelledby="ModalAboutctUs" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ModalSignIn">My Posts</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                </div>
+
+                {%for data in post_fetch%}
+                <div class="modal-body">
+                    <div class="card" id="cardMarket">
+                        <img src="{{url_for("MarketPlace.static",filename="media/")}}{{data[8]}}" class="card-img-top"/>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between">
+                                <span class="font-weight-bold">{{data[2]}}</span>
+                                
+                                {%if data[5] == "Yes"%}
+                                <img src="/static/images/free_32px.png" class="free-icon"/>
+                                {%else%}
+                                <span class="font-weight-bold">{{data[6]}} ₪</span>
+                                {%endif%}
+                            </div>
+                            <p class="card-text mb-1 mt-1"> 
+                               {{data[7]}}
+                            </p>
+                            <div class="d-flex align-items-center flex-row"
+                                 id="time-posted">
+                                <i class="fa-solid fa-calendar"></i> &nbsp;
+                                {% if ((((data[4] - now).total_seconds())/60)* -1) | int > 60 %}
+                                                    
+                                {{(((((data[4] - now).total_seconds())/60)* -1) / 60) | int}}
+                                hours
+                                ago
+
+                                {%else%}
+                                {{((((data[4] - now).total_seconds())/60)* -1) | int}}
+                                minutes
+                                ago
+                                {%endif%}
+                  
+                            </div>
+                           <p><a href="/delete_post/{{data[1]}}"><button class="btn btn-danger">DELETE POST</button></a></p>
+                        </div>
+                    </div>
+                  
+                </div>
+                {%endfor%}
+            </div>
+        </div>
+    </div>
+    <!-- My Posts info Modal End -->
+{% endblock %}

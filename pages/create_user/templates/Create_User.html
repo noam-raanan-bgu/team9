@@ -1,0 +1,228 @@
+<!--create user Page-->
+{% extends 'base.html' %}
+{% block title %}Create user{% endblock %}
+{% block page_body_main_content %}
+
+    <!-- Create Event Form Start -->
+    <section class="container mycreatePage">
+        <h1>Sign Up</h1>
+        <HR>
+        </HR>
+        <h2>My Details</h2>
+        <hr>
+        
+        
+        <form method="post" class="needs-validation" novalidate action="/CreateUser" enctype="multipart/form-data">
+
+            <div class="form-floating mb-3">
+                <input type="text" id="newUserName" name="username" class="form-control
+            form-control-lg"  required/>
+                <label class="form-label" for="newUserName"><i class="fa fa-heading
+              mx-3"></i>User Name*</label>
+                <div class="invalid-feedback">Please provide a valid name includes
+                    letters.
+                </div>
+            </div>
+
+            
+            <div class="mb-3">
+                <select class="form-select" aria-label="Category" id="Gender Name" name="gender" required>
+                    <option selected disabled hidden value="">Please select your gender from the list
+                    </option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+                <div class="invalid-feedback">Please provide a valid gender.</div>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input type="email" id="newEventEmail" name="email" class="form-control
+            form-control-lg" required/>
+                <label class="form-label" for="newEmail"><i class="fa fa-at mx-3"></i>Email Address*</label>
+                <div class="invalid-feedback">Please provide a valid email address</div>
+            </div>
+
+ 
+            <div class="form-floating mb-3">
+                <input type="Password" id="newUserPassword" name="password" class="form-control
+            form-control-md" minlength="8" maxlength="15"
+                       required/>
+                <label class="form-label" for="newUserPassword"><i class="fa-regular
+              fa-lock-keyhole"></i> Password*</label>
+                <div class="invalid-feedback">Please provide a valid password between
+                    8-15 numbers/letters.
+                </div>
+            </div>
+
+   
+
+            <div class="form-floating mb-3">
+                <input type="Password" id="newUserPasswordCon" class="form-control
+            form-control-md" minlength="8"
+                       maxlength="15" required/>
+                <label class="form-label" for="newUserPasswordCon">Confirm Password*</label>
+                <div class="invalid-feedback">Please provide a valid password between
+                    8-15 numbers/letters.
+                </div>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input type="date" id="newUserDATE" name="dob" class="form-control
+            form-control-lg" required/>
+                <label class="form-label" for="newUserDATE"><i class="fa-solid
+              fa-cake-candles"></i> Date of Birth*</label>
+                <div class="invalid-feedback">Please provide a valid date.</div>
+            </div>
+
+           
+
+            <div class="form-floating mb-3">
+                <input type="tel" id="newUserPhone" name="phone" class="form-control
+            form-control-lg" pattern="[0-9]{10}" required/>
+                <label class="form-label" for="newUserPhone"><i class="fa-solid
+              fa-mobile-retro"></i> Phone*</label>
+                <div class="invalid-feedback">Please provide a valid Phone number.</div>
+            </div>
+
+            <label for="newProfilePhoto" class="form-label"><i class="fa-solid
+            fa-plus"></i>Upload Profile Picture</label>
+            <input class="form-control mb-3" type="file" name="image" id="newProfilePhoto"
+                   accept=".jpeg,.jpg,.png" required/>
+            <div class="invalid-feedback">Please provide one valid profile image. (jpeg
+                or png)
+            </div>
+
+           
+
+            <div class="form-floating mb-3">
+                <label class="form-label" for="newUserCity"><i class="fa-solid
+              fa-globe-stand"></i> User City*</label>
+                <select class="form-select" aria-label="City" id="City Name" name="city" required>
+                    <option selected disabled hidden value=""></option>
+                    <option >Beer Sheva</option>
+                    <option >Tel Aviv</option>
+                    <option >Jerusalem</option>
+                    <option >Haifa</option>
+                    <option >Ramat Gan</option>
+                    <option >Givataim</option>
+                    <option >Eilat</option>
+                    <option >Naharia</option>
+                </select>
+                <div class="invalid-feedback">Please provide a valid city.</div>
+            </div>
+            <button type="submit" class="btn btn-dark" id="submit"
+                    onclick="allLetter(document.form1.text1)">Submit
+            </button>
+        </form>
+
+
+        
+
+
+
+<!--
+   <section class="container my-3 p-3">
+            <hr>
+        </section>
+-->
+
+
+        <!-- <form method="post" action="/CreateDog" class="needs-validation" enctype="multipart/form-data" novalidate>
+            <h3>Dog's Details</h3>
+            <div class="form-floating mb-3">
+                <input type="text" name="name" class="form-control
+            form-control-lg"  required/>
+                <label class="form-label" for="newDogName"><i class="fa fa-heading
+              mx-3"></i>Dog's Name*</label>
+                <div class="invalid-feedback">Please provide a valid name includes
+                    letters.
+                </div>
+            </div>
+            <div class="form-outline my-createPage">
+
+                <div class="mb-3">
+                    
+                    <select class="form-select" aria-label="Dog_Breed" id="Dog_Breed" name="dog_type"
+                            required>
+                        <option selected disabled hidden value="">Please select dog's type
+                            from select menu
+                        </option>
+                        <option >French Bulldog</option>
+                        <option>German Shepherd</option>
+                        <option >Poodle</option>
+                        <option>Korgi</option>
+                        <option >Pitbull</option>
+                        <option >Pinscher</option>
+                        <option >Mixed Breed</option>
+                    </select>
+                    <div class="invalid-feedback">Please provide a valid breed.</div>
+                </div>
+
+
+                <div class="mb-3">
+
+                    <select class="form-select" aria-label="Dog_Gender" id="Dog_Gender" name="gender"
+                            required>
+                        <option selected disabled hidden value="">Please select gender
+                            from select menu
+                        </option>
+                        <option >Male</option>
+                        <option >Female</option>
+                    </select>
+                    <div class="invalid-feedback">Please provide a valid gender.</div>
+                </div>
+
+                
+                <div class="mb-3">
+
+                    <select class="form-select" aria-label="Dog_Size" id="Dog_Size" name="size"
+                            required>
+                        <option selected disabled hidden value="">Please select dog's size
+                            from select menu
+                        </option>
+                        <option >Big</option>
+                        <option >Mid</option>
+                        <option >Small</option>
+                    </select>
+                    <div class="invalid-feedback">Please provide a valid size.</div>
+                </div>
+                
+                <div class="form-floating mb-3">
+                    <input type="date" id="newUserDATE" class="form-control
+              form-control-lg" name="dob" required/>
+                    <label class="form-label" for="newUserDATE"><i class="fa-solid
+                fa-cake-candles"></i> Date Birth*</label>
+                    <div class="invalid-feedback">Please provide a valid date.</div>
+                </div>
+
+
+                <div class="mb-3">
+                    <select class="form-select" aria-label="Dog_Nature" id="Dog_Nature" name="nature"
+                            required>
+                        <option selected disabled hidden value="">Please select dog's
+                            nature from select menu
+                        </option>
+                        <option >Relaxed</option>
+                        <option >Energetic</option>
+                        <option >Balanced</option>
+                    </select>
+                    <div class="invalid-feedback">Please provide a valid nature.</div>
+                </div>
+
+                <label for="newProfilePhoto" class="form-label"><i class="fa-solid
+              fa-plus"></i>Upload Profile Picture</label>
+                <input class="form-control mb-3" type="file" name="image" id="newProfilePhoto"
+                       accept=".jpeg,.jpg,.png" required/>
+                <div class="invalid-feedback">Please provide one valid main photo.
+                    (jpeg or png)
+                </div> -->
+                <!-- name,dog_type,gender,size,dob,nature,image -->
+                <!-- <button type="submit" class="btn btn-dark mb-3" id="submit">Add a new
+                    one
+
+                </button>
+            </div>
+        </form> -->
+    </section>
+{% endblock %}

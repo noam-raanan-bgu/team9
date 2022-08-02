@@ -1,0 +1,86 @@
+<!--my matches Page-->
+{% extends 'base.html' %}
+{% block title %}My Matches{% endblock %}
+{% block page_head_css %}
+    <link rel="stylesheet" href="{{ url_for('MarketPlace.static', filename='css/marketPlace.css') }}">
+{% endblock %}
+{% block page_body_main_content %}
+    <!--Title-->
+    <main id="main">
+        <section class="container my-2 p-5" id="myMatches">
+            <h1>My Matches</h1>
+            <hr>
+            <div class="content">
+                <div class="container">
+                    <div class="row">
+   {%for data in result%}
+                        <div class="col-lg-4">
+                            <div class="card">
+                                <div class="member-card pt-2 pb-2">
+                                    <h3>Match for: {{data['Match_for']}}</h3>
+                                    <div class="thumb-lg member-thumb mx-auto"><img
+                                            src={{url_for("Create_user.static",filename="media/")}}{{data['IMAGE_SRC']}}  "
+                                            class="rounded-circle img-thumbnail"
+                                            alt="profile-image"></div>
+                                    <div class="">
+                                        <h4>Name: {{data['DOG_NAME']}}</h4>
+                                        <p class="text-muted">Gender: {{data['DOG_GENDER']}}
+                                        <p class="text-muted">Nature: {{data['DOG_NATURE']}}
+                                        <p class="text-muted">Size: {{data['DOG_SIZE']}}
+                                        <p class="text-muted">Type: {{data['DOG_TYPE']}}
+
+                                    </div>
+
+                                    <button type="button" class="btn btn-dark btn-lg signin-button-middle"
+                                            data-bs-toggle="modal"
+                                            href="#moreinformation{{data['USER_ID']}}" id="more information">
+                                        <i class="fa-solid fa-circle-info"></i> contact information
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+                        <div class="modal fade modal-md" id="moreinformation{{data['USER_ID']}}" aria-hidden="true" aria-labelledby="ModalAboutctUs"
+                        tabindex="-1">
+                       <div class="modal-dialog">
+                           <div class="modal-content">
+                               <div class="modal-header">
+                                {%for users_data in users%}
+
+                                {%if data['USER_ID'] == users_data[0]%}
+                                   <h5 class="modal-title" id="ModalSignIn">{{users_data[1]}}</h5>
+                                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                               </div>
+
+                               <p class="Details">
+                               <div class="thumb-lg member-thumb mx-auto">
+                                   <img src="{{url_for("Create_user.static", filename="media/")}}{{users_data[7]}}" class="rounded-circle img-thumbnail"
+                                                alt="profile-image"></div>
+                                                                  <br>
+                               phone number : {{users_data[5]}}<br>
+                               city : {{users_data[6]}}<br><br>
+                                    <a href="mailto:{{users_data[2]}}">Contact {{users_data[1]}}</a>
+
+                               </p>
+                                    </div>
+
+                               {%endif%}
+                               {%endfor%}
+                           </div>
+                       </div>
+                   </div>
+
+
+{%endfor%}
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock %}
